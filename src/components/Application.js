@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from 'axios';
 
 import "components/Application.scss";
 import DayList from "components/DayList.js";
@@ -63,7 +64,6 @@ const days = [
 ];
 
 const appointment = appointments.map(appointment => {
-  console.log("appointment", appointment);
 
   return (
     <Appointment 
