@@ -21,4 +21,3 @@ export function getAppointmentsForDay(state, day) {
   return matchingAppointments(state.appointments, appointmentArray);
 
 };
-
