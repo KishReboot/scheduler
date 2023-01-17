@@ -6,7 +6,7 @@ const matchingAppointments = (appointments, ids) => {
 
 };
 
-export function getAppointmentsForDay(state, day) {
+function getAppointmentsForDay(state, day) {
   
   let appointmentArray = [];
   
@@ -22,4 +22,4 @@ export function getAppointmentsForDay(state, day) {
 
 };
 
-module.exports = { matchingAppointments };
+module.exports = { getAppointmentsForDay };
