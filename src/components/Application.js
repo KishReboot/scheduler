@@ -2,14 +2,15 @@ import React, { useState } from "react";
 
 import "components/Application.scss";
 import DayList from "components/DayList.js";
+import InterviewerList from "components/InterviewerList.js";
 import Appointment from "components/Appointment";
 
-const appointments = {
-  "1": {
+const appointments = [
+  {
     id: 1,
     time: "12pm",
   },
-  "2": {
+   {
     id: 2,
     time: "1pm",
     interview: {
@@ -21,11 +22,11 @@ const appointments = {
       }
     }
   },
-  "3": {
+  {
     id: 3,
     time: "2pm",
   },
-  "4": {
+  {
     id: 4,
     time: "3pm",
     interview: {
@@ -37,11 +38,12 @@ const appointments = {
       }
     }
   },
-  "5": {
+  {
     id: 5,
     time: "4pm",
   }
-};
+];
+
 const days = [
   {
     id: 1,
@@ -60,7 +62,7 @@ const days = [
   },
 ];
 
-const appointment = appointments.map((appointment) => {
+const appointment = appointments.map(appointment => {
   console.log("appointment", appointment);
 
   return (
@@ -72,6 +74,7 @@ const appointment = appointments.map((appointment) => {
 });
 
 console.log(appointment);
+
 export default function Application(props) {
 
   const [day, setDay] = useState("Monday");
