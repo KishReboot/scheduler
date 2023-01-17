@@ -60,6 +60,15 @@ console.log(appointment);
 export default function Application(props) {
 
   const [day, setDay] = useState([]);
+  const [dayData, setDayData] = useState([]);
+
+  useEffect(() => {
+    axios.get('http:/localhost:8001/api/days')
+    .then(res => {
+      setDayData(res.data)
+    })
+    .catch(err => console.log(err))
+  }, [])
 
   return (
     <main className="layout">
@@ -72,7 +81,7 @@ export default function Application(props) {
         <hr className="sidebar__separator sidebar--centered" />
         <nav className="sidebar__menu">
           <DayList 
-            days={days} 
+            days={dayData} 
             value={day} 
             onChange={setDay} 
           />
