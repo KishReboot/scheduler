@@ -6,6 +6,7 @@ export default function Show(props) {
   const interviewer = props.interviewer.map(interviewer => {
 
     return interviewer.name;
+    
   })
 
   return (
