@@ -5,7 +5,7 @@ import "components/Application.scss";
 import DayList from "components/DayList.js";
 import InterviewerList from "components/InterviewerList.js";
 import Appointment from "components/Appointment";
-import { getAppointmentsForDay, matchingAppointments } from "helpers/selectors";
+import { getAppointmentsForDay } from "helpers/selectors";
 
 export default function Application(props) {
   
