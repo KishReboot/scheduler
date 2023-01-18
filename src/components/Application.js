@@ -29,14 +29,15 @@ export default function Application(props) {
     }, []);
   
   const dailyAppointments = getAppointmentsForDay(state, state.day);
+
   const appointment = dailyAppointments.map(dailyAppointment => {
-  const interview = getInterview(state, dailyAppointment.interview)
+    
+    const interview = getInterview(state, dailyAppointment.interview)
 
     return (
-      <Appointment
+      <Appointment 
+        {...dailyAppointment}
         key={dailyAppointment.id}
-        id={dailyAppointment.id}
-        time={dailyAppointment.time}
         interview={interview}
       />
     )
@@ -55,7 +56,7 @@ export default function Application(props) {
           <DayList
             days={state.days}
             day={state.day}
-            SetDay={setDay}
+            setDay={setDay}
           />
         </nav>
         <img
