@@ -5,17 +5,17 @@ import Button from "components/Button";
 
 export default function Form(props) {
 
-  const [student, setStudent] = useState(props.student || "");
-  const [interviewer, setInterviewer] = useState(props.interviewer || null);
+  const [student, setStudent] = useState(props.name || "");
+  const [interviewer, setInterviewer] = useState(props.value || null);
 
   const reset = () => {
-    setStudent("");
-    setInterviewer('null');
+    setStudent("")
+    setInterviewer('null')
   }
 
   function cancel () {
     reset();
-    props.onCancel();
+    props.onCancel()
   }
 
   return (
@@ -24,7 +24,7 @@ export default function Form(props) {
         <form autoComplete="off">
          <input
             className="appointment__create-input text--semi-bold"
-            name={props.student}
+            name={props.name}
             type="text"
             onChange={(event) => setStudent(event.target.value)}
             placeholder="Enter Student Name"
